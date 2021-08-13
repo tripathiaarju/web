@@ -7,9 +7,15 @@ pipeline {
                 sh 'mvn -version'
             }
         }
-        stage('Compiling') {
+        stage('Build') {
             steps {
-                sh 'mvn clean build'
+                sh 'mvn clean package'
+            }
+        }
+        
+        stage('Deploying') {
+            steps {
+                echo 'Have to deploy'
             }
         }
     }
